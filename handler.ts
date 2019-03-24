@@ -4,7 +4,8 @@ import { AuthTokenService } from "./AuthTokenService";
 
 interface BasicResponse {
   statusCode: number
-  body: string
+  body: string,
+  headers: any
 }
 
 const handler: Handler = async (event: any, context: Context, callback: Callback) => {
@@ -15,7 +16,14 @@ const handler: Handler = async (event: any, context: Context, callback: Callback
   const response = await authTokenService.generateToken()
   const token = response.data['access_token']
   const status = response.status
-  callback(null, { statusCode: status, body: JSON.stringify({authToken: token})})
+  callback(null, { 
+    statusCode: status, 
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true,
+    },
+    body: JSON.stringify({authToken: token})
+  });
 };
 
 export { handler }
