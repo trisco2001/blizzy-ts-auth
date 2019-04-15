@@ -19,6 +19,7 @@ service: botanybay-auth # NOTE: update this with your service name
 
 plugins:
   - serverless-plugin-typescript
+  - serverless-dotenv-plugin
   - serverless-offline
 
 provider:
