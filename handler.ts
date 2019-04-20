@@ -1,12 +1,6 @@
 import { Handler, Context, Callback } from "aws-lambda";
 import { Environment } from "./Environment";
-import { AuthTokenService } from "./AuthTokenService";
-
-interface BasicResponse {
-  statusCode: number
-  body: string,
-  headers: any
-}
+import { AuthTokenService } from "blizzy-core";
 
 const handler: Handler = async (event: any, context: Context, callback: Callback) => {
   const environment = new Environment()
