@@ -1,5 +1,5 @@
 # blizzy-ts-auth
-Authentication service for Blizzy services.
+Authentication service for Blizzy services. 
 
 # Setup
 This app uses the [Serverless framework](https://github.com/serverless/serverless) to make requests to the [Blizzard World of Warcraft API](https://develop.battle.net).
